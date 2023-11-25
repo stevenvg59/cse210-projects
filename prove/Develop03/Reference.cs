@@ -4,6 +4,10 @@ public class Reference{
     private int _verse;
     private int _endVerse = 0;
 
+
+    //Two constructors:
+    // 1. With a single verse
+    // 2. With a block of verses (start & end verses)
     public Reference(string book, int chapter, int verse)
     {
         _book = book;
@@ -23,6 +27,7 @@ public class Reference{
     {
         string result;
         
+        //It will display the end verse only if it exists
         if (_endVerse != 0)
         {   
             result = $"{_book} {_chapter}:{_verse}-{_endVerse} ";

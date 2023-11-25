@@ -17,16 +17,25 @@ public class Word{
 
     public void Show()
     {
-
+        //Displaying the word and a space
+        Console.Write(_text + " ");
     }
 
     public bool isHidden()
     {
-        return false;
+        //Checking if the word is hidden (replaced with underscores "_") or not
+        if (_text != "_"){
+            return false;
+        }
+        else {
+            return true;
+        }
+        
     }
 
     public string GetDisplayText()
     {
-        return "";
+        //Adding a space between words
+        return _text + " ";
     }
 }
