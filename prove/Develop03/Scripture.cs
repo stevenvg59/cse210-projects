@@ -46,6 +46,8 @@ public class Scripture
             //Getting random index for hiding
             int randomIndex = random.Next(_words.Count);
 
+            //FOR STRETCH CHALLENGE: I WAS ABLE TO RAMDONLY SELECT ANY WORD BUT ONLY FROM THOSE WORDS THAT ARE NOT ALREADY HIDDEN
+            // ...
             //Checking if the Word is already hidden
             if (_words[randomIndex]._isHidden == false)
             {

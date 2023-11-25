@@ -23,6 +23,8 @@ public class Word{
 
     public bool isHidden()
     {
+        //FOR STRETCH CHALLENGE: I WAS ABLE TO RAMDONLY SELECT ANY WORD BUT ONLY FROM THOSE WORDS THAT ARE NOT ALREADY HIDDEN
+        // ...
         //Checking if the word is hidden (replaced with underscores "_") or not
         if (_text != "_"){
             return false;
