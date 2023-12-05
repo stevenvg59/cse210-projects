@@ -28,25 +28,63 @@ public class ReflectingActivity : Activity
     {
         Console.Clear();
         DisplayStartingMessage();
+
+        Console.WriteLine("\nConsider the following prompt:\n");
+        DisplayPrompt();
+        Console.Write("\nWhen you have something in mind, press enter to continue.");
+        Console.ReadLine();
+
+        Console.Write("\nNow ponder on each of the following questions as they related to this experience.\nYou may begin in: ");
+        ShowCountDown(5);        
+        
+        Console.Clear();
+        DisplayQuestions();
+
+        DisplayEndingMessage();
+
     }
 
     public string GetRandomPrompt()
     {
-        return "";
+        //Getting a random number between 1-4
+        Random randomNumber = new Random();
+        int random = randomNumber.Next(1, _prompts.Count + 1);
+
+        //Getting the random prompt
+        string prompt = _prompts[random - 1];
+
+        return prompt;
     }
 
     public string GetRandomQuestion()
     {
-        return "";
+        //Getting a random number between 1-9
+        Random randomNumber = new Random();
+        int random = randomNumber.Next(1, _questions.Count + 1);
+
+        //Getting the random question
+        string question = _questions[random - 1];
+
+        return question;
     }
 
     public void DisplayPrompt()
     {
-
+        Console.Write(" --- ");
+        Console.Write(GetRandomPrompt());
+        Console.WriteLine(" --- ");
     }
 
     public void DisplayQuestions()
     {
+        int count = 0;
 
+        while(count < _duration)
+        {
+            Console.Write("> " + GetRandomQuestion() + " ");
+            ShowSpinner(10);
+            Console.Write("\n");
+            count += 10;
+        }
     }
 }
