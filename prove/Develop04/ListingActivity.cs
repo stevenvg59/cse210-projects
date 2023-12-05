@@ -7,6 +7,7 @@ public class ListingActivity : Activity
     {
         _name = "Listing";
         _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+        _count = 0;
     
         _prompts.Add("Who are people that you appreciate?");
         _prompts.Add("What are personal strengths of yours?");
@@ -19,15 +20,45 @@ public class ListingActivity : Activity
     {
         Console.Clear();
         DisplayStartingMessage();
+
+        Console.WriteLine("\nList as many responses as you can to the following prompt:");
+        Console.Write(" --- ");
+        Console.Write(GetRandomPrompt());
+        Console.WriteLine(" --- ");
+        Console.Write("You may begin in: ");
+        ShowCountDown(5);
+
+        Console.Write("\n");
+        GetListFromUser();
+        DisplayEndingMessage();
     }
 
-    public void GetRandomPrompt()
+    private string GetRandomPrompt()
     {
+        //Getting a random number for all the items of _prompts list
+        Random randomNumber = new Random();
+        int random = randomNumber.Next(1, _prompts.Count + 1);
 
+        //Getting the random prompt
+        string prompt = _prompts[random - 1];
+
+        return prompt;
     }
 
-    public List<string> GetListFromUser()
+    public void GetListFromUser()
     {
-        return _prompts;
+        List<string> inputs = new List<string>();
+
+        DateTime currentTime = DateTime.Now;
+        DateTime futureTime = currentTime.AddSeconds(_duration);
+        while (currentTime < futureTime)
+        {
+            Console.Write("> ");
+            inputs.Add(Console.ReadLine());
+            _count++;
+            currentTime = DateTime.Now;
+        }
+
+        Console.WriteLine("You listed " + _count + " items!");
     }
 }
