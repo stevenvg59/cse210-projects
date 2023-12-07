@@ -14,7 +14,7 @@ public class SimpleGoal : Goal
 
     public override bool IsComplete()
     {
-        return false;
+        return _isComplete;
     }
 
     public override string GetStringRepresentation()
