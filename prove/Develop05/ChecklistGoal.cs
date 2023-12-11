@@ -11,6 +11,11 @@ public class ChecklistGoal : Goal
         _amountCompleted = 0;
     }
 
+    public void SetCompleted(int amount)
+    {
+        _amountCompleted = amount;
+    }
+
     public override int GetPoints()
     {
         if(IsComplete())
@@ -44,6 +49,7 @@ public class ChecklistGoal : Goal
     }
     public override string GetStringRepresentation()
     {
-        return "";
+        string rep = GetType() + ":" + _shortName + "," + _description + "," + _points + "," + _bonus + "," + _amountCompleted + "," + _target; 
+        return rep;
     }
 }

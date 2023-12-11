@@ -1,0 +1,8 @@
+140
+SimpleGoal:simple,simple goal,10,True
+EternalGoal:eternal,eternal goal,20
+ChecklistGoal:check,check list goal,60,50,3,3
+SimpleGoal:Another simple,another simple goal example,30,True
+SimpleGoal:Run,Running for 20 minutes,20,True
+EternalGoal:Pray often,Pray daily at least 3 times,5
+ChecklistGoal:Read scriptures,Reading scriptures for 10 minutes,20,150,1,5

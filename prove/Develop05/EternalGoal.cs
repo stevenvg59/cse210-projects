@@ -20,6 +20,7 @@ public class EternalGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return "";
+        string rep = GetType() + ":" + _shortName + "," + _description + "," + _points; 
+        return rep;
     }
 }
