@@ -10,7 +10,7 @@ public class EternalGoal : Goal
 
     public override void RecordEvent()
     {
-        
+        IsComplete();
     }
 
     public override bool IsComplete()
