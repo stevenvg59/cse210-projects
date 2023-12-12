@@ -6,8 +6,7 @@ public class Events
     private string _time;
     private Address _address;
 
-    public Events
-    (string title, string description, string date, string time, Address address)
+    public Events(string title, string description, string date, string time, Address address)
     {
         _title = title;
         _description = description;
